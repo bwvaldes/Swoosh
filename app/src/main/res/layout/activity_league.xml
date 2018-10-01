@@ -7,6 +7,7 @@
     tools:context=".LeagueActivity">
 
     <ImageView
+        android:contentDescription="@string/league_background"
         android:id="@+id/imageView3"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -18,6 +19,7 @@
         app:srcCompat="@drawable/desiredleaguebg" />
 
     <ImageView
+        android:contentDescription="@string/swoosh_logo"
         android:id="@+id/imageView2"
         android:layout_width="100dp"
         android:layout_height="60dp"
@@ -38,7 +40,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/montserrat"
-        android:text="Desired League"
+        android:text="@string/desired_league"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,10 +49,10 @@
 
     <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -63,6 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/swoosh_button_toggle"
+            android:contentDescription="@string/select_mens"
             android:fontFamily="@font/montserrat"
             android:text="@string/mens"
             android:textColor="@android:color/white"
@@ -77,6 +80,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/swoosh_button_toggle"
+            android:contentDescription="@string/select_womens"
             android:fontFamily="@font/montserrat"
             android:text="@string/womens"
             android:textColor="@android:color/white"
@@ -89,6 +93,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/swoosh_button_toggle"
+            android:contentDescription="@string/select_co_ed"
             android:fontFamily="@font/montserrat"
             android:text="@string/co_ed"
             android:textColor="@android:color/white"
@@ -106,7 +111,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/swoosh_button"
         android:fontFamily="@font/montserrat"
-        android:text="Button"
+        android:text="@string/next"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
