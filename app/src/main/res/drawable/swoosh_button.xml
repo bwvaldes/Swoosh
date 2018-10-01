@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid
+        android:color="@color/swoosh_background">
+
+    </solid>
+    <stroke
+        android:color="@android:color/white"
+        android:width="2dp">
+
+    </stroke>
+
+</shape>
