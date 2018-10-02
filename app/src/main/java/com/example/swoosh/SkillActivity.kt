@@ -6,6 +6,9 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_skill.*
 
 class SkillActivity : AppCompatActivity(), View.OnClickListener {
+
+    var league = ""
+
     override fun onClick(v: View?) {
         when (v) {
             beginner -> {
@@ -20,6 +23,9 @@ class SkillActivity : AppCompatActivity(), View.OnClickListener {
 
 
     private fun compareSkillState(isBeginner: Boolean) {
+
+        // : Method 1
+
 //        if (isBeginner) {
 //            baller.isChecked = false
 //            beginner.isChecked = true
@@ -27,15 +33,23 @@ class SkillActivity : AppCompatActivity(), View.OnClickListener {
 //            baller.isChecked = true
 //            beginner.isChecked = false
 //        }
-        baller.isChecked=!isBeginner
-        beginner.isChecked=isBeginner
+
+        //Simpler Method
+
+//        baller.isChecked=!isBeginner
+//        beginner.isChecked=isBeginner
 
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_skill)
-        beginner.setOnClickListener(this)
-        baller.setOnClickListener(this)
+        league = intent.getStringExtra(EXTRA_LEAGUE)
+        println(league)
+
+        // Method 1
+
+//        beginner.setOnClickListener(this)
+//        baller.setOnClickListener(this)
     }
 }
