@@ -4,22 +4,24 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.example.swoosh.Utilities.EXTRA_LEAGUE
+import com.example.swoosh.Model.Player
+//import com.example.swoosh.Utilities.EXTRA_LEAGUE
 import com.example.swoosh.R
-import com.example.swoosh.Utilities.EXTRA_SKILL
+import com.example.swoosh.Utilities.EXTRA_PLAYER
+//import com.example.swoosh.Utilities.EXTRA_SKILL
 import kotlinx.android.synthetic.main.activity_skill.*
 
 class SkillActivity : BaseActivity() {
 
-    private var league = ""
-
-    private var selectedSkill = ""
+//    private var league = ""
+//    private var selectedSkill = ""
+    lateinit var player: Player
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_skill)
-        league = intent.getStringExtra(EXTRA_LEAGUE)
-        println(league)
+        player = intent.getParcelableExtra(EXTRA_PLAYER)
+        println(player)
 
     }
 
@@ -27,21 +29,22 @@ class SkillActivity : BaseActivity() {
         beginnerBtn.isChecked = true
         ballerBtn.isChecked = false
 
-        selectedSkill = "beginner"
+        player.skill = "beginner"
     }
 
     fun onBallerClicked(view: View) {
         beginnerBtn.isChecked = false
         ballerBtn.isChecked = true
 
-        selectedSkill = "baller"
+        player.skill = "baller"
     }
 
     fun onFinishedClicked(view: View) {
-        if (selectedSkill!= "") {
+        if (player.skill!= "") {
             val finishActivity = Intent(this, FinishActivity::class.java)
-            finishActivity.putExtra(EXTRA_LEAGUE, league)
-            finishActivity.putExtra(EXTRA_SKILL, selectedSkill)
+//            finishActivity.putExtra(EXTRA_LEAGUE, league)
+//            finishActivity.putExtra(EXTRA_SKILL, selectedSkill)
+            finishActivity.putExtra(EXTRA_PLAYER, player)
             startActivity(finishActivity)
         }else{
             Toast.makeText(this,"Please select a skill level...", Toast.LENGTH_SHORT).show()
